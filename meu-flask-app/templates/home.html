@@ -11,14 +11,16 @@
   </form>
 
   {% if mostrar %}
-    <h2>Olá, {{ usuario }}! Bem-vindo(a)!</h2>
-
-    <h3>Suas tarefas:</h3>
-    <ul>
-      {% for tarefa in tarefas %}
-        <li>{{ tarefa }}</li>
-      {% endfor %}
-    </ul>
+      <h1>Bem-vindo, {{ usuario or 'Usuário' }}!</h1>
+      <ul>
+          {% for tarefa in tarefas %}
+              <li>{{ tarefa }}</li>
+          {% else %}
+              <li>Não há tarefas.</li>
+          {% endfor %}
+      </ul>
+  {% else %}
+      <!-- Formulário -->
   {% endif %}
   <a href="/sobre">Ir para Sobre</a>
 </body>
