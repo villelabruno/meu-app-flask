@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página Inicial</title>
+</head>
+<body>
+  <h1>Digite seu nome</h1>
+  <form method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  {% if mostrar %}
+    <h2>Olá, {{ usuario }}! Bem-vindo(a)!</h2>
+
+    <h3>Suas tarefas:</h3>
+    <ul>
+      {% for tarefa in tarefas %}
+        <li>{{ tarefa }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <a href="/sobre">Ir para Sobre</a>
+</body>
+</html>
